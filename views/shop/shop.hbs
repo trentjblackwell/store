@@ -1,0 +1,21 @@
+<div class="container vertical-center">
+{{# each products}}
+  <div class="row">
+    {{#each this}} 
+    <div class="col-sm-6 col-md-4">
+      <div class="product thumbnail">
+        <img src="{{this.imageUrl}}" alt="...">
+          <div class ="clearfix">
+            <div class="price">
+              <a href="#" class="btn btn-primary" role="button">$79</a>
+        </div>
+            </div>
+        </div>
+      </div>
+     
+    {{/each}}
+  </div>
+{{/each}}
+</div>
+
+
