@@ -1,9 +1,12 @@
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
-
+  align: center;
+  padding: 25%;
   display: flex;
   align-items: center;
+  max-height: 100vh;
+  max-width: 100vw;
 }
 
 .vertical-center div {
@@ -19,6 +22,11 @@
 
 .product {
   border: 0px transparent;
+}
+
+.product-viewer {
+  min-width: 100vw;
+  max-width: 100vw;
 }
 
 .price {

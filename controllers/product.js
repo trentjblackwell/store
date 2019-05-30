@@ -18,8 +18,8 @@ var products = [
     new Product({
         item: 'Classic T-Shirt: Charcoal',
         imageUrl: 'https://i.imgur.com/OTa0C4Y.jpg',
-        price: 79
-    })
+        price: 79,
+    }),
 ];
 var done = 0;
 for (var i= 0; i < products.length; i++) {
