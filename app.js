@@ -7,6 +7,9 @@ var session = require('express-session');
 var passport = require('passport');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
+var mongoose = require('mongoose');
+var mongoStore = require('connect-mongo')(session);
+
 
 require('./config/database');
 require('./config/passport');
@@ -27,12 +30,16 @@ app.use(session({
   secret: 'JXET',
   resave: false,
   saveUninitialized: false,
+  store: new mongoStore({ mongooseConnection: mongoose.connection }),
+  cookie: { maxAge: 180 * 60 * 1000 }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
+//check if user is logged in
 app.use(function(req, res, next) {
   res.locals.login = req.isAuthenticated();
+  res.locals.session = req.session;
   next();
 });
 app.use('/', indexRouter);

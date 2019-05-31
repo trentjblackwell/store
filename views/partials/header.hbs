@@ -13,7 +13,9 @@
             {{else}} 
             <li><a href="/auth/google">Login with Google</a></li>
              {{/if}}
-             <li><a href="/cart" class="glyphicon glyphicon-shopping-cart"><span class="badge"></span></a></li>
+             <li><a href="/cart" class="glyphicon glyphicon-shopping-cart">
+             <span class="badge">{{session.cart.numItems}}</span>
+             </a></li>
             </ul>
             </li>
            
