@@ -41,7 +41,6 @@ router.get('/shop', function(req, res, next) {
     res.render('shop/shop', {title: 'Shop', products: productRow});
   });
 });
-
 router.get('/cart', function(req, res, next) {
   if (!req.session.cart) {
    res.render('cart/cart', {title: 'Cart', products: null});
@@ -49,7 +48,7 @@ router.get('/cart', function(req, res, next) {
   var cart = new Cart(req.session.cart);
   res.render('cart/cart', {title: 'Cart', products: cart.cartArray(), total: cart.total });
 });
-
+//add-to-cart
 router.get('/add-to-cart/:id', function(req, res, next) {
   var productId = req.params.id;
   var cart = new Cart(req.session.cart ? req.session.cart: {});
@@ -65,6 +64,7 @@ router.get('/add-to-cart/:id', function(req, res, next) {
   });
 });
 
+//remove items from cart (not working)
 router.get('/removeitem/:id', function(req, res, next) {
   var productId = req.params.id;
   var cart = new Cart(req.session.cart ? req.session.cart: {});

@@ -1,0 +1,10 @@
+{{#if login}}
+<footer class = "cart-footer sticky-bottom">
+    <div class = container>
+        
+        <span class="pull-right"><strong>Total:</strong> ${{session.cart.total}}</span>
+        <span class="pull-left">{{session.cart.numItems}} items in cart</span>
+        <span></span>
+    </div>
+</footer>
+{{/if}}
